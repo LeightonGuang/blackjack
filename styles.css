@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+}
+
+button{
+  cursor: pointer;
+}
+
+body{
+  background-color: rgb(3, 113, 103);
+}
+
+input{
+  width: 50px;
+}
+
+h1{
+  color: white;
+  margin: 5px;
+  text-align: center;
+}
+
+#players_hand{
+  width: 100%;
+  display: flex;
+  
+}
+
+.players{
+  width: 150px;
+  height: 150px;
+  border: 2px solid;
+  border-color: rgb(255, 234, 0);
+  border-radius: 2px;
+  margin: 10px;
+  flex-grow: 1;
+}
+
+h3{
+  color: rgb(255, 234, 0);
+  margin: 10px;
+}
+
+.card{
+  background-color: white;
+  overflow: hidden;
+  width: 72px;
+  height: 110px;
+  border-radius: 5px;
+}

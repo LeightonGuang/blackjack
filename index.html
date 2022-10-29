@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,5 +10,72 @@
 
   <body>
     <h1>Blackjack</h1>
+    <!--
+      936 x 440
+      72 x 110
+    -->
+    <div class="card">
+      <img
+        id="card_num"
+        src="images/playing_cards_print.svg"
+        alt="playing cards print"
+      />
+      <style>
+        #card_num {
+          margin-top: calc((-110px * 0));
+          margin-left: calc((-72px * 0));
+        }
+      </style>
+    </div>
+
+    <section>
+      <div id="dealer">
+        <h3>Dealer</h3>
+      </div>
+    </section>
+
+    <section>
+      Suit: 
+      <input type="text" id="test_suit"/>
+      Rank: 
+      <input type="text" id="test_rank"/>
+      <button id="test_button" onclick="button_func()">enter</button>
+    </section>
+
+    <section id="players_hand">
+      <div id="player_one" class="players">
+        <h3>Player1</h3>
+        <section class="action">
+          <button type="button">-1</button>
+          <input type="number" value="50" />
+          <button type="button">+1</button>
+        </section>
+      </div>
+
+      <div id="player_two" class="players">
+        <h3>Player2</h3>
+      </div>
+
+      <div id="player_three" class="players">
+        <h3>Player3</h3>
+      </div>
+
+      <div id="player_four" class="players">
+        <h3>Player4</h3>
+      </div>
+
+      <div id="player_five" class="players">
+        <h3>Player5</h3>
+      </div>
+
+      <div id="player_six" class="players">
+        <h3>Player6</h3>
+      </div>
+
+      <div id="player_seven" class="players">
+        <h3>Player7</h3>
+      </div>
+    </section>
+    <script src="index.js"></script>
   </body>
 </html>
