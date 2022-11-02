@@ -20,15 +20,14 @@ h1{
   text-align: center;
 }
 
-#players_hand{
+#players{
   width: 100%;
   display: flex;
-  
 }
 
-.players{
+.players_grid{
   width: 150px;
-  height: 150px;
+  height: 200px;
   border: 2px solid;
   border-color: rgb(255, 234, 0);
   border-radius: 2px;
@@ -36,7 +35,12 @@ h1{
   flex-grow: 1;
 }
 
-h3{
+.players_hand{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.player_name_colour{
   color: rgb(255, 234, 0);
   margin: 10px;
 }
@@ -47,4 +51,5 @@ h3{
   width: 72px;
   height: 110px;
   border-radius: 5px;
+  
 }

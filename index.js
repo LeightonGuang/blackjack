@@ -7,13 +7,13 @@ let ranks = [ "A", "2", "3", "4", "5",
               "6", "7", "8", "9", "10", "J", 
               "Q", "K"];
 
+let card_name_num = 1;
+
 function button_func(){
   let test_img = document.querySelector("#card_num");
   let suit = document.querySelector("#test_suit").value;
   let rank = document.querySelector("#test_rank").value;
 
-  //document.querySelector("#test_suit").value = "";
-  //document.querySelector("#test_rank").value = "";
   console.log(suit);
 
   let y = -110 * (suits.indexOf(suit)) + "px";
@@ -21,9 +21,17 @@ function button_func(){
   console.log("y: " + y);
   console.log("x: " + x);
   
-
   test_img.style.marginTop = y;
   test_img.style.marginLeft = x;
+
+  //clone cards and make new one
+
+  let element = document.querySelector("#card0");
+  let clone = element.cloneNode(true);
+  clone.id = "card" + card_name_num;
+  element.after(clone);
+  card_name_num++;
+  clone.removeAttribute("hidden", false);
 }
 
 class Card{
