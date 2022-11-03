@@ -22,38 +22,42 @@
       <input type="text" id="test_suit" />
       Rank:
       <input type="text" id="test_rank" />
-      <button id="test_button" onclick="button_func()">enter</button>
+      <button id="test_button" onclick="button_func()">Enter</button>
+      <button id="deal_card" onclick="deal_card()">Deal</button>
     </section>
 
     <section id="players">
-      <div id="player_one" class="players_grid">
-        <h3 class="player_name_colour">Player1</h3>
-        <div class="players_hand">
-          <div class="card" id="card0" hidden>
-            <!--
-              936 x 440
-              72 x 110
-            -->
-            <img
-              id="card_num"
-              src="images/playing_cards_print.svg"
-              alt="playing cards print"
-            />
-            <style>
-              #card_num {
-                margin-top: calc((-110px * 0));
-                margin-left: calc((-72px * 0));
-              }
-            </style>
+      <div class="players_grid">
+        <div id="player1">
+          <h3 class="player_name_colour">Player1</h3>
+          <div class="players_hand">
+            <div class="card" id="card0" hidden>
+              <!--72 x 110-->
+              <img
+                id="card_num"
+                src="images/playing_cards_print.svg"
+                alt="playing cards print"
+              />
+              <style>
+                #card_num {
+                  margin-top: calc((-110px * 0));
+                  margin-left: calc((-72px * 0));
+                }
+              </style>
+            </div>
           </div>
         </div>
-
-        <section class="action">
-          <button type="button">-1</button>
-          <input type="number" value="50" />
-          <button type="button">+1</button>
-          <button type="button" onclick="double()">double</button>
-        </section>
+        <div>
+          <section class="action">
+            <p id="player1_card_total" class="card_total">Total: 0</p>
+            <button type="button">-1</button>
+            <input type="number" value="50" />
+            <button type="button">+1</button>
+            <button type="button" onclick="hit()">Hit</button>
+            <button type="button" onclick="double()">Double</button>
+            <button type="button" onclick="bet()">Bet</button>
+          </section>
+        </div>
       </div>
 
       <div id="player_two" class="players_grid">
