@@ -9,6 +9,24 @@
   </head>
 
   <body>
+    <div id="popup_menu">
+      <div id="popup_menu_container">
+        <div>
+          Number of Player(s):
+          <input type="number" />
+          (Players: 1-7)
+        </div>
+
+        <div>
+          Starting Chips:
+          <input type="number" value="1000" />
+          minimum chip: $100
+        </div>
+
+        <button type="submit" onclick="popup_menu_enter()">Enter</button>
+      </div>
+    </div>
+
     <h1>Blackjack</h1>
 
     <section>
@@ -50,12 +68,13 @@
         <div>
           <section class="action">
             <p id="player1_card_total" class="card_total">Total: 0</p>
-            <button type="button">-1</button>
+            <button>-1</button>
             <input type="number" value="50" />
-            <button type="button">+1</button>
-            <button type="button" onclick="hit()">Hit</button>
-            <button type="button" onclick="double()">Double</button>
-            <button type="button" onclick="bet()">Bet</button>
+            <button>+1</button>
+            <button onclick="deal_card()">Hit</button>
+            <button onclick="stand()">Stand</button>
+            <button onclick="double()">Double</button>
+            <button onclick="bet()">Bet</button>
           </section>
         </div>
       </div>

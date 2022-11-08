@@ -1,12 +1,21 @@
 //7 player max
 //4 decks of cards
 
+function popup_menu_enter(){
+  let popup_menu = document.querySelector("#popup_menu");
+  popup_menu.style.visibility = "hidden";
+  console.log(popup_menu.style);
+}
+
 //      spades  hearts  diamonds  clubs
 let suits = ["C", "D", "H", "S"];
 let ranks = [ "A", "2", "3", "4", "5", 
               "6", "7", "8", "9", "10", "J", 
               "Q", "K"];
 
+let on_player = 0;
+
+//for indexing plaers card hand
 let card_name_num = 1;
 
 let total = [0,0,0,0,0,0,0];
@@ -40,7 +49,7 @@ function button_func(){
     test_img.style.marginTop = y;
     test_img.style.marginLeft = x;
   
-    //clone cards and make new one
+    //clone cards and make new img
   
     let element = document.querySelector("#card0");
     let clone = element.cloneNode(true);
@@ -63,41 +72,49 @@ class Card{
   }
 }
 
+let card = new Card(suits[0], ranks[12]);
+//console.log(card);
+
 class Deck{
   constructor(){
-    this.deck = [];
+    this.cards = [];
   }
 
   createDeck(suits, values){
-    for(let suit of suits){
-      for (let value of values){
-        this.deck.push(new Card(suit, value));
+    //4 decks of cards
+    for(let i = 0; i < 4; i++){
+      for(let suit of suits){
+        for(let value of values){
+          this.cards.push(new Card(suit, value));
+        }
       }
     }
-    return this.deck;
+    return this.cards;
   }
 
   deal(){
     console.log("deal");
     let card;
-    card = this.deck.pop();
+    card = this.cards.pop();
     player1.hand.push(card);
   }
 }
 
-function Player(){
-  this.name = "";
-  this.hand = [];
-  this.chips = 0;
+class Player{
+  constructor(){
+    this.name = "";
+    this.hand = [];
+    this.chips = 0;
+  }
 }
 
-let card = new Card(suits[0], ranks[12]);
-//console.log(card);
-
+//create new object with 4 decks of cards
+//deck = the deck of cards in play
 let deck = new Deck();
-console.log(deck.createDeck(suits, ranks));
 deck.createDeck(suits, ranks);
-console.log("first card in the deck: " + deck.deck[0].value);
+console.log(deck.cards);
+
+//console.log("first card in the deck: " + deck.deck[0].value);
 
 let player1 = new Player();
 console.log(player1);
